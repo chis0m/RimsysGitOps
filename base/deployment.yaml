@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo
+spec:
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      initContainers:
+        - name: todo-migration
+          image: cl0ud/todo
+          command: ['sh', '-c', 'php artisan migrate:fresh']
+          envFrom:
+            - configMapRef:
+                name: todo-env-config
+
+      containers:
+        - name: todo
+          image: cl0ud/todo:2.0.0
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 400Mi
+          ports:
+            - containerPort: 8000
+          envFrom:
+            - configMapRef:
+                name: todo-env-config
+        

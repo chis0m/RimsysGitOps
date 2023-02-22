@@ -1,0 +1,13 @@
+resources:
+  - database.yaml
+  - redis.yaml
+  - deployment.yaml
+  - service.yaml
+
+configMapGenerator:
+  - name: todo-env-config
+    envs:
+      - .app.env
+  - name: todo-db-config
+    envs:
+      - .db.env
