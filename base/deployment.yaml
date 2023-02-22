@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: todo-migration
-          image: cl0ud/todo
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops/af87a2c57b45a012699866004914e3f56c180cca
           command: ['sh', '-c', 'php artisan migrate:fresh']
           envFrom:
             - configMapRef:
@@ -22,7 +22,7 @@ spec:
 
       containers:
         - name: todo
-          image: cl0ud/todo:2.0.0
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops/af87a2c57b45a012699866004914e3f56c180cca
           imagePullPolicy: Always
           resources:
             requests:

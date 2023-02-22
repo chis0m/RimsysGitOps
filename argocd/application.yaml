@@ -8,7 +8,7 @@ spec:
   project: default
 
   source:
-    repoURL: git@github.com:chis0m/gitOps.git
+    repoURL: git@github.com:chis0m/gitops.git
     targetRevision: HEAD
     path: environments/dev
   destination: 
