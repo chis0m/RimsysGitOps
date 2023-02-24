@@ -15,9 +15,9 @@ spec:
     spec:
       initContainers:
         - name: todo-migration
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:1626d4f9e20bf7fd615a41d888f04bd91b41e42f
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
 
       containers:
         - name: todo
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:1626d4f9e20bf7fd615a41d888f04bd91b41e42f
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
 

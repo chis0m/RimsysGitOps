@@ -9,7 +9,7 @@ spec:
 
   source:
     repoURL: git@github.com:chis0m/gitops.git
-    targetRevision: HEAD
+    targetRevision: master
     path: environments/dev
   destination: 
     server: https://kubernetes.default.svc
@@ -35,7 +35,7 @@ spec:
 
 #   source:
 #     repoURL: https://github.com/chis0m/gitOps.git
-#     targetRevision: HEAD
+#     targetRevision: master
 #     path: prod
 #   destination: 
 #     server: https://kubernetes.default.svc
