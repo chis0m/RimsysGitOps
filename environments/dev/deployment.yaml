@@ -1,0 +1,23 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: todo
+  template:
+    metadata:
+      labels:
+        app: todo
+    spec:
+      initContainers:
+        - name: todo-migration
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:1626d4f9e20bf7fd615a41d888f04bd91b41e42f
+
+      containers:
+        - name: todo
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:1626d4f9e20bf7fd615a41d888f04bd91b41e42f
+

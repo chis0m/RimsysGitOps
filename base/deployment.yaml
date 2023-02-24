@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: todo-migration
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops/af87a2c57b45a012699866004914e3f56c180cca
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
           command: ['sh', '-c', 'php artisan migrate:fresh']
           envFrom:
             - configMapRef:
@@ -22,7 +22,7 @@ spec:
 
       containers:
         - name: todo
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops/af87a2c57b45a012699866004914e3f56c180cca
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
           imagePullPolicy: Always
           resources:
             requests:
@@ -36,4 +36,3 @@ spec:
           envFrom:
             - configMapRef:
                 name: todo-env-config
-        
