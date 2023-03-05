@@ -8,12 +8,12 @@ spec:
   project: default
 
   source:
-    repoURL: git@github.com:chis0m/gitops.git
+    repoURL: git@github.com:chis0m/RimsysGitOps.git
     targetRevision: master
-    path: environments/dev
+    path: environments/base
   destination: 
     server: https://kubernetes.default.svc
-    namespace: dev
+    namespace: default
 
   syncPolicy:
     syncOptions:
@@ -22,29 +22,3 @@ spec:
     automated:
       selfHeal: true
       prune: true
-
-
-# ---
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: argo-application
-#   namespace: argocd
-# spec:
-#   project: default
-
-#   source:
-#     repoURL: https://github.com/chis0m/gitOps.git
-#     targetRevision: master
-#     path: prod
-#   destination: 
-#     server: https://kubernetes.default.svc
-#     namespace: prod
-
-#   syncPolicy:
-#     syncOptions:
-#     - CreateNamespace=true
-
-#     automated:
-#       selfHeal: true
-#       prune: true  
