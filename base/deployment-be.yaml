@@ -2,27 +2,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo
+  name: myprofile-backend
 spec:
   selector:
     matchLabels:
-      app: todo
+      app: myprofile-backend
   template:
     metadata:
       labels:
-        app: todo
+        app: myprofile-backend
     spec:
       initContainers:
-        - name: todo-migration
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
-          command: ['sh', '-c', 'php artisan migrate:fresh']
+        - name: myprofile-backend-migration
+          image: cl0ud/myprofile-be:1.0.0
+          command: ['sh', '-c', 'php artisan migrate:fresh --seed']
           envFrom:
             - configMapRef:
-                name: todo-env-config
+                name: myprofile-backend-env-config
 
       containers:
-        - name: todo
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:c8f2347ed216383971f9380957a03c115c1ce6e9
+        - name: myprofile-backend
+          image: cl0ud/myprofile-be:1.0.0
           imagePullPolicy: Always
           resources:
             requests:
@@ -35,4 +35,4 @@ spec:
             - containerPort: 8000
           envFrom:
             - configMapRef:
-                name: todo-env-config
+                name: myprofile-backend-env-config

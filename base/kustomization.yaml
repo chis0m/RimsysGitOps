@@ -1,13 +1,18 @@
 resources:
   - database.yaml
   - redis.yaml
-  - deployment.yaml
-  - service.yaml
+  - deployment-be.yaml
+  - service-be.yaml
+  - deployment-fe.yaml
+  - service-fe.yaml 
 
 configMapGenerator:
-  - name: todo-env-config
+  - name: myprofile-backend-env-config
     envs:
-      - .app.env
-  - name: todo-db-config
+      - .backend.env
+  - name: myprofile-frontend-env-config
     envs:
-      - .db.env
+      - .frontend.env      
+  - name: myprofile-db-config
+    envs:
+      - .database.env

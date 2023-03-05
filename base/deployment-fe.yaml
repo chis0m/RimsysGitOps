@@ -1,0 +1,30 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myprofile-frontend
+spec:
+  selector:
+    matchLabels:
+      app: myprofile-frontend
+  template:
+    metadata:
+      labels:
+        app: myprofile-frontend
+    spec:
+      containers:
+        - name: myprofile-frontend
+          image: cl0ud/myprofile-fe:1.0.0
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 128Mi
+            limits:
+              cpu: 200m
+              memory: 400Mi
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: myprofile-frontend-env-config

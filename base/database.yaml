@@ -2,26 +2,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-db
+  name: myprofile-backend-db
   labels:
-    app: todo-db
+    app: myprofile-backend-db
 spec:
   selector:
     matchLabels:
-      app: todo-db
+      app: myprofile-backend-db
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: todo-db
+        app: myprofile-backend-db
     spec:
       containers:
       - image: mysql:8.0
-        name: todo-db
+        name: myprofile-backend-db
         envFrom:
           - configMapRef:
-              name: todo-db-config
+              name: myprofile-db-config
         ports:
         - containerPort: 3306
           name: mysql
@@ -30,11 +30,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: todo-db-service
+  name: myprofile-backend-db-service
 spec:
   ports:
   - protocol: TCP
     port: 3306
     targetPort: 3306
   selector:
-    app: todo-db
+    app: myprofile-backend-db
