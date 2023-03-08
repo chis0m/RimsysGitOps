@@ -9,7 +9,8 @@ metadata:
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     alb.ingress.kubernetes.io/group.name: myprofile
     alb.ingress.kubernetes.io/group.order: '1'
-    alb.ingress.kubernetes.io/scheme: ip
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
   ingressClassName: alb
   rules:

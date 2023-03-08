@@ -4,7 +4,8 @@ resources:
   - deployment-be.yaml
   - service-be.yaml
   - deployment-fe.yaml
-  - service-fe.yaml 
+  - service-fe.yaml
+  - ingress.yaml
 
 configMapGenerator:
   - name: myprofile-backend-env-config
