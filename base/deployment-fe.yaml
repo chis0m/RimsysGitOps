@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: myprofile-frontend
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/frontend:dffe0379b48901b7e4fd0480d986d56e34b07c84
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/frontend:793723d27747b87dc24ee02c1831516d43c27ad8
           imagePullPolicy: Always
           resources:
             requests:
