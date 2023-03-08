@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
         - name: myprofile-frontend
-          image: cl0ud/myprofile-fe:1.0.0
+          # image: cl0ud/myprofile-fe:1.0.0
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/gitops:b769ed405899859dfbdc89530a17f7115a8b9dac
           imagePullPolicy: Always
           resources:
             requests:
