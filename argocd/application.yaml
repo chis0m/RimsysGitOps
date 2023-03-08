@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: git@github.com:chis0m/RimsysGitOps.git
     targetRevision: master
-    path: base
+    path: base/
   destination: 
     server: https://kubernetes.default.svc
     namespace: default
