@@ -14,7 +14,7 @@ spec:
     spec:
       initContainers:
         - name: myprofile-backend-migration
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/backend:aae63f030dc9b113c6beb383becd3e7fd1f9b035
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/backend:f66b6debad254a388aff547e08cd78ba03bdbe98
           command: ['sh', '-c', 'php artisan migrate:fresh --seed']
           envFrom:
             - configMapRef:
@@ -22,7 +22,7 @@ spec:
 
       containers:
         - name: myprofile-backend
-          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/backend:aae63f030dc9b113c6beb383becd3e7fd1f9b035
+          image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/backend:f66b6debad254a388aff547e08cd78ba03bdbe98
           imagePullPolicy: Always
           resources:
             requests:
