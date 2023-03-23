@@ -26,5 +26,5 @@ spec:
           ports:
             - containerPort: 3000
           envFrom:
-            - configMapRef:
-                name: myprofile-frontend-env-config
+            - secrefRef:
+                name: myprofile-frontend-env-secret

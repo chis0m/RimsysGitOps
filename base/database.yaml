@@ -20,8 +20,8 @@ spec:
       - image: mysql:8.0
         name: myprofile-backend-db
         envFrom:
-          - configMapRef:
-              name: myprofile-db-config
+          - secretRef:
+              name: myprofile-db-secret
         ports:
         - containerPort: 3306
           name: mysql

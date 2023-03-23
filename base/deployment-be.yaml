@@ -17,8 +17,8 @@ spec:
           image: 139080726045.dkr.ecr.us-east-1.amazonaws.com/backend:f66b6debad254a388aff547e08cd78ba03bdbe98
           command: ['sh', '-c', 'php artisan migrate:fresh --seed']
           envFrom:
-            - configMapRef:
-                name: myprofile-backend-env-config
+            - secrefRef:
+                name: myprofile-backend-env-secret
 
       containers:
         - name: myprofile-backend
@@ -34,5 +34,5 @@ spec:
           ports:
             - containerPort: 8000
           envFrom:
-            - configMapRef:
-                name: myprofile-backend-env-config
+            - secrefRef:
+                name: myprofile-backend-env-secret

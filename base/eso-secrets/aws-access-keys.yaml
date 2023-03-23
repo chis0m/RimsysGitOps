@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: myprofile-aws-access-keys
+  namespace: default
+type: Opaque
+data:
+  AWS_ACCESS_KEY_ID: QUtJQVNBWU8zT1lPNVRDSk5aTlI=
+  AWS_SECRET_ACCESS_KEY: R01Ed29heXJpdDNxc21Tbklub2tyM25mQks5ZmNvZDFsckFzeTBldA==
